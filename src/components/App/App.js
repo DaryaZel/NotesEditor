@@ -43,10 +43,7 @@ function App() {
   const deleteNote = async (noteForDelete) => {
     try {
       await fetch(`http://localhost:8000/notes/${noteForDelete.id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        }
+        method: 'DELETE'
       })
       let newArray = [...notes]
       const index = newArray.findIndex(n => n.id === noteForDelete.id);
